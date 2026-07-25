@@ -83,11 +83,11 @@ http://127.0.0.1:8000/
 
 ### Home Page
 
-![Home Page](screenshots/home-page.jpeg)
+![Home Page](screenshots/homepage.jpeg)
 
 ### Menu
 
-![Menu](screenshots/menu-page.jpeg)
+![Menu](screenshots/menu page.jpeg)
 
 ### Reservation
 
@@ -95,11 +95,11 @@ http://127.0.0.1:8000/
 
 ### Order Form
 
-![Order Form](screenshots/order-form.jpeg)
+![Order Form](screenshots/orderform.jpeg)
 
 ### Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.jpeg)
+![Admin Dashboard](screenshots/admin.jpeg)
 
 ## 👩‍💻 Author
 
