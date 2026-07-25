@@ -87,7 +87,7 @@ http://127.0.0.1:8000/
 
 ### Menu
 
-![Menu](screenshots/menu page.jpeg)
+![Menu](screenshots/menupage.jpeg)
 
 ### Reservation
 
