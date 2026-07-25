@@ -81,13 +81,25 @@ http://127.0.0.1:8000/
 
 ## 📸 Screenshots
 
-Add screenshots of:
+### Home Page
 
-- Home Page
-- Menu
-- Reservation
-- Order Form
-- Admin Dashboard
+![Home Page](screenshots/homepage.jpeg)
+
+### Menu
+
+![Menu](screenshots/menu page.jpeg)
+
+### Reservation
+
+![Reservation](screenshots/reservation.jpeg)
+
+### Order Form
+
+![Order Form](screenshots/orderform.jpeg)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin.jpeg)
 
 ## 👩‍💻 Author
 
