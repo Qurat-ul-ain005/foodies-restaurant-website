@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+{% include 'includes/navbar.html' %}
+
+    <!-- Hero Section -->
+
+    <section id="home" class="hero">
+        <h1>Welcome to Foodie's Restaurant</h1>
+
+        <p>Fresh Food | Best Taste | Fast Service</p>
+
+        <button id="menuBtn">View Menu</button>
+        <button id="bookBtn">Book a Table</button>
+    </section>
+
+
+    <!-- About Section -->
+
+    <section id="about" class="about">
+
+        <div class="about-text">
+            <h2>About Our Restaurant</h2>
+
+            <p>
+                Welcome to Foodie's Restaurant. We serve fresh, delicious,
+                and high-quality food prepared by experienced chefs.
+                Our goal is to provide the best dining experience with
+                excellent service and a warm atmosphere.
+            </p>
+
+            <button>Read More</button>
+        </div>
+
+        <div class="about-image">
+            <img src="{% static 'home/images/background.jpeg' %}" alt="Restaurant">
+        </div>
+
+    </section>
+
+    <!-- Menu Section -->
+
+<section id="menu" class="menu">
+
+    <h2>Our Popular Menu</h2>
+
+    <div class="filter-buttons">
+    <button type="button" class="active" data-filter="All">All</button>
+    <button type="button" data-filter="Pizza">Pizza</button>
+    <button type="button" data-filter="Burger">Burger</button>
+    <button type="button" data-filter="Pasta">Pasta</button>
+    <button type="button" data-filter="Drinks">Drinks</button>
+    <button type="button" data-filter="Dessert">Dessert</button>
+    <button type="button" data-filter="Starter">Starter</button>
+</div>
+
+    <div class="menu-container">
+
+        {% for item in menu_items %}
+
+    
+
+    <div class="card" data-category="{{ item.category }}">
+
+        <img src="{% static 'home/images/' %}{{ item.image }}" alt="{{ item.name }}">
+        <h3>{{ item.name }}</h3>
+
+        <p>{{ item.description }}</p>
+
+        <h4>Rs {{ item.price }}</h4>
+
+        <button>Order Now</button>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<!-- Chef Section -->
+
+<section class="chef">
+
+    <h2>Meet Our Expert Chefs</h2>
+
+    <div class="chef-container">
+
+        {% for chef in chef_items %}
+
+        <div class="chef-card">
+
+            <img src="{% static 'home/images/' %}{{ chef.image }}" alt="{{ chef.name }}">
+
+            <h3>{{ chef.name }}</h3>
+
+            <p>{{ chef.speciality }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- Testimonial Section -->
+
+<section class="testimonial">
+
+    <h2>What Our Customers Say</h2>
+
+    <div class="testimonial-container">
+
+        {% for item in testimonial_items %}
+
+        <div class="testimonial-card">
+
+            <div class="quote">💬</div>
+
+            <img src="{% static 'home/images/' %}{{ item.image }}" alt="{{ item.name }}">
+
+            <p class="review">
+                "{{ item.review }}"
+            </p>
+
+            <p class="stars">★★★★★</p>
+
+            <h3>{{ item.name }}</h3>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+<!-- Special Offer Section -->
+
+<section class="special">
+
+    <div class="special-image">
+
+        <img src="{% static 'home/images/special.jpeg' %}" alt="Special Food">
+
+    </div>
+
+    <div class="special-content">
+
+        <h2>Chef's Special</h2>
+
+        <h3>Grilled Chicken with Fresh Vegetables</h3>
+
+        <p>
+            Enjoy our delicious grilled chicken prepared with fresh herbs,
+            premium spices, and healthy vegetables. A perfect meal for lunch
+            or dinner.
+        </p>
+
+        <button>Order Now</button>
+
+    </div>
+
+</section>
+
+
+<!-- Order Section -->
+
+<section id="order" class="reservation">
+
+    <h2>Order Your Food</h2>
+
+    <p>Place your favourite food order online.</p>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="success-message">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form class="reservation-form" method="POST" action="/order/save/">
+
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <textarea name="address" placeholder="Delivery Address" rows="4" required></textarea>
+
+        <select name="food" required>
+
+            <option value="">Select Food</option>
+
+            {% for item in menu_items %}
+                <option value="{{ item.name }}">{{ item.name }}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+</section>
+
+<!-- Gallery Section -->
+
+<section id="gallery" class="gallery">
+
+    <h2>Our Food Gallery</h2>
+
+    <div class="gallery-container">
+
+    {% for item in gallery_items %}
+
+    <div class="gallery-item">
+
+        <img src="{% static 'home/images/' %}{{ item.image }}" alt="{{ item.title }}">
+
+        <div class="overlay">
+            <h3>{{ item.title }}</h3>
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</section>
+
+
+
+<!-- Reservation Section -->
+
+<section id="reservation" class="reservation">
+    {% if messages %}
+    {% for message in messages %}
+        <div class="success-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+    <h2>Book Your Table</h2>
+
+    <p>Reserve your table online and enjoy a delicious dining experience.</p>
+
+    <form class="reservation-form" method="POST" action="/reservation/save/">
+
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <input type="date" name="date" required>
+
+        <input type="time" name="time" required>
+
+        <input type="number" name="guests" placeholder="Number of Guests" min="1" required>
+
+        <textarea name="message" placeholder="Special Request" rows="5"></textarea>
+
+        <button type="submit">Book Table</button>
+
+    </form>
+
+</section>
+
+<!-- Contact Section -->
+
+<section id="contact-form" class="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>Have a question? Send us a message.</p>
+
+    <form class="contact-form" method="POST" action="/contact/save/">
+
+        {% csrf_token %}
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <input type="text" name="subject" placeholder="Subject" required>
+
+        <textarea name="message" placeholder="Write your message..." rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+<!-- Footer -->
+
+{% include 'includes/footer.html' %}
+
+<button id="topBtn">⬆</button>
+{% endblock %}

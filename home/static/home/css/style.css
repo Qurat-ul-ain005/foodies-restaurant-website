@@ -1,0 +1,888 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+}
+
+/* Navigation Bar */
+
+nav{
+    background:#8B0000;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h2{
+    font-size:30px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+nav ul li a:hover{
+    color:gold;
+}
+
+/* Hero Section */
+
+.hero{
+    height:90vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("../images/background.jpeg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.hero h1{
+    font-size:60px;
+    color:white;
+}
+
+.hero p{
+    font-size:24px;
+    margin:20px 0;
+    color:white;
+}
+
+button{
+    padding:15px 35px;
+    margin:10px;
+    border:none;
+    border-radius:5px;
+    background:#8B0000;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:gold;
+    color:black;
+    transform:scale(1.05);
+}
+/* =========================
+   About Section
+========================= */
+
+.about{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 100px;
+    gap:50px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:40px;
+    color:#8B0000;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:25px;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* Menu Section */
+
+.menu{
+    padding:80px 10%;
+    text-align:center;
+    background:#f8f8f8;
+}
+
+.menu h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h3{
+    margin-top:15px;
+}
+
+.card p{
+    margin:15px 0;
+}
+
+.card h4{
+    color:#e67e22;
+    margin-bottom:15px;
+}
+
+.card button{
+    background:#e67e22;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#d35400;
+}
+/* Chef Section */
+
+.chef{
+    padding:80px 10%;
+    text-align:center;
+    background:white;
+}
+
+.chef h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.chef-container{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.chef-card{
+    flex:1;
+    background:#f8f8f8;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.chef-card:hover{
+    transform:translateY(-10px);
+}
+
+.chef-card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:20px;
+}
+
+.chef-card h3{
+    margin-bottom:10px;
+}
+
+.chef-card p{
+    color:#777;
+}
+
+/* Testimonial Section */
+
+.testimonial{
+    padding:80px 10%;
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.testimonial h2{
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.testimonial-container{
+    display:flex;
+    gap:30px;
+}
+
+.testimonial-card{
+    flex:1;
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+}
+
+.quote{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.review{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:20px;
+    font-style:italic;
+}
+
+.stars{
+    color:gold;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.testimonial-card h3{
+    color:#e67e22;
+}
+/* Special Offer Section */
+
+.special{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    padding:80px 10%;
+    background:white;
+}
+
+.special-image{
+    flex:1;
+}
+
+.special-image img{
+    width:100%;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+.special-content{
+    flex:1;
+}
+
+.special-content h2{
+    color:#e67e22;
+    margin-bottom:15px;
+    font-size:20px;
+    text-transform:uppercase;
+}
+
+.special-content h3{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.special-content p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.special-content button{
+    background:#e67e22;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.special-content button:hover{
+    background:#d35400;
+}
+/* Footer */
+
+footer{
+    background:#222;
+    color:white;
+    padding:60px 10% 20px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.footer-box{
+    flex:1;
+}
+
+.footer-box h3{
+    color:#e67e22;
+    margin-bottom:20px;
+}
+
+.footer-box p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+footer hr{
+    border:none;
+    height:1px;
+    background:#555;
+    margin-bottom:20px;
+}
+
+.copyright{
+    text-align:center;
+    color:#bbb;
+}
+
+/* Gallery Section */
+
+.gallery{
+    padding:80px 10%;
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.3s;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.gallery-container img:hover{
+    transform:scale(1.05);
+}
+
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Reservation Section */
+
+.reservation{
+
+    padding:80px 10%;
+    background:#f8f8f8;
+    text-align:center;
+
+}
+
+.reservation h2{
+
+    font-size:40px;
+    color:#8B0000;
+    margin-bottom:15px;
+
+}
+
+.reservation p{
+
+    color:#555;
+    margin-bottom:40px;
+
+}
+
+.reservation-form{
+
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.reservation-form input,
+.reservation-form textarea{
+
+    padding:15px;
+
+    font-size:16px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    outline:none;
+
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus{
+
+    border-color:#8B0000;
+
+}
+
+.reservation-form button{
+
+    background:#8B0000;
+
+    color:white;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.reservation-form button:hover{
+
+    background:#b22222;
+
+}
+
+/* ==========================
+   Responsive Design
+========================== */
+
+@media (max-width:768px){
+
+    .hero{
+
+        height:80vh;
+
+        padding:20px;
+
+        text-align:center;
+
+    }
+
+    .hero h1{
+
+        font-size:40px;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+    .hero-buttons{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:center;
+
+    }
+}
+
+/* ==========================
+   Responsive Design
+========================== */
+
+@media (max-width:768px){
+
+    /* Navbar */
+
+    nav{
+    padding:15px 20px;
+}
+
+nav ul{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    margin-top:15px;
+}
+
+nav ul.show{
+    display:flex;
+}
+
+.menu-icon{
+    display:block;
+    color:white;
+}
+    /* Hero */
+
+    .hero{
+        height:80vh;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    /* About */
+
+    .about{
+        flex-direction:column;
+        text-align:center;
+        padding:50px 20px;
+    }
+
+    /* Menu */
+
+    .menu-container{
+        grid-template-columns:1fr;
+    }
+
+    /* Chef */
+
+    .chef-container{
+        flex-direction:column;
+    }
+
+    /* Testimonial */
+
+    .testimonial-container{
+        flex-direction:column;
+    }
+
+    /* Special */
+
+    .special{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    /* Gallery */
+
+    .gallery-container{
+        grid-template-columns:1fr;
+    }
+
+    /* Footer */
+
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+/* Smooth Animation */
+
+*{
+    scroll-behavior:smooth;
+}
+
+section{
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Scroll To Top Button */
+
+#topBtn{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#8B0000;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:1000;
+
+}
+
+#topBtn:hover{
+
+    background:gold;
+
+    color:black;
+
+}
+
+/* Hamburger Menu */
+
+.menu-icon{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+/* Success Message */
+
+
+
+.success-message{
+    width:80%;
+    max-width:700px;
+    margin:20px auto;
+    padding:15px;
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+    border-radius:8px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Contact Section */
+
+.contact{
+
+    padding:80px 10%;
+    background:white;
+    text-align:center;
+
+}
+
+.contact h2{
+
+    font-size:40px;
+    color:#8B0000;
+    margin-bottom:15px;
+
+}
+
+.contact p{
+
+    color:#555;
+    margin-bottom:40px;
+
+}
+
+.contact-form{
+
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    padding:15px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#8B0000;
+
+}
+
+.contact-form button{
+
+    background:#8B0000;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.contact-form button:hover{
+
+    background:#b22222;
+
+}
+
+/* Order Select Box */
+
+.reservation-form select{
+
+    padding:15px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+
+}
+
+.reservation-form select:focus{
+
+    border-color:#8B0000;
+
+}
+
+/* Success Message */
+
+.success-message{
+
+    background:#d4edda;
+    color:#155724;
+    padding:15px;
+    margin:20px auto;
+    width:60%;
+    border-radius:8px;
+    text-align:center;
+    font-weight:bold;
+
+}
+/* Filter Buttons */
+
+.filter-buttons{
+    text-align:center;
+    margin:30px 0;
+}
+
+.filter-buttons button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    background:#8B0000;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.filter-buttons button:hover{
+    background:#b22222;
+}
+
+.filter-buttons button.active{
+    background:#ff9800;
+}
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+.testimonial-card img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:15px auto;
+    display:block;
+}
